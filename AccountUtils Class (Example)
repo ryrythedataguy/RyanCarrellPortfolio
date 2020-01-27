@@ -1,0 +1,7 @@
+public with sharing class AccountUtils {
+	// Public Method
+    public static List<Account> accountsByState(String stateAbbreviation) {
+       List<Account> accountResult = [SELECT AccountNumber, Name FROM Account WHERE BillingState = :stateAbbreviation];
+        return accountResult;
+    }
+}
